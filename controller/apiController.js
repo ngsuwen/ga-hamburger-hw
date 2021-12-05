@@ -8,4 +8,16 @@ router.put('/buy/:id', async(req,res)=>{
     res.send(product)
 })
 
+// CREATE PRODUCTS
+router.post('/post', async(req,res)=>{
+    const product = await Product.create(req.body)
+    res.send(product)
+})
+
+// DELETE PRODUCT
+router.delete('/delete/:id', async(req,res)=>{
+    const product = await Product.findByIdAndDelete(req.params.id)
+    res.send(product)
+})
+
 module.exports = router
