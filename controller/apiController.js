@@ -11,6 +11,12 @@ router.put('/buy/:id', async(req,res)=>{
     res.redirect('/store')
 })
 
+// EDIT PRODUCTS
+router.put('/edit/:id', async(req,res)=>{
+    const product = await Product.findByIdAndUpdate(req.params.id, req.body)
+    res.redirect('/store')
+})
+
 // CREATE PRODUCTS
 router.post('/post', async(req,res)=>{
     const product = await Product.create(req.body)

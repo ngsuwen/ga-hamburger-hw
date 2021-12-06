@@ -11,21 +11,22 @@
 <body>
     <div class="d-flex flex-column p-5">
         <h1>New Product Page</h1>
-        <form class="d-flex flex-column" action="/api/post" method="POST">
+        <form class="d-flex flex-column" action="/api/edit/<%=data._id%>?_method=PUT" method="POST">
             <label for="name">Name</label>
-            <input type="text" name="name" id="name" />
+            <input type="text" name="name" id="name" value=<%=data.name%>>
             <label for="description">Description</label>
-            <input type="text" name="description" id="description" />
+            <input type="text" name="description" id="description" value=<%=data.description%>>
             <label for="img">Img URL</label>
-            <input type="text" name="img" id="img" />
+            <input type="text" name="img" id="img" value=<%=data.img%>>
             <label for="price">Price</label>
-            <input type="text" name="price" id="price" />
+            <input type="text" name="price" id="price" value=<%=data.price%>>
             <label for="qty">Quantity</label>
-            <input type="text" name="qty" id="qty" />
+            <input type="text" name="qty" id="qty" value=<%=data.qty%>>
             <div class="d-grid gap-2 d-md-flex justify-content-md-start mt-3">
-                <input type="submit" class="btn btn-primary me-md-2" value="Create Product"/>
+                <input type="submit" class="btn btn-primary me-md-2" value="Update Product"/>
             </div>
         </form>
+        <a class="pt-2" href='/<%=data._id%>'><button type="button" class="btn btn-primary">Back to Listing</button></a>
     </div>
 </body>
 

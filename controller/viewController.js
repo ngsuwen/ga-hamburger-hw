@@ -15,7 +15,8 @@ router.get('/new', async(req,res)=>{
 
 // EDIT PRODUCT
 router.get('/edit/:id', async(req,res)=>{
-    res.render('edit.ejs', {data:req.params.id})
+    const product = await Product.findById(req.params.id)
+    res.render('edit.ejs', {data:product})
 })
 
 // VIEW ONE PRODUCT

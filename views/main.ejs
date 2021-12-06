@@ -12,10 +12,11 @@
 </head>
 <body>
     <div class="d-flex flex-column">
-    <h1 class="d-flex justify-content-center mb-5">Organ Listings</h1>
+    <h1 class="d-flex justify-content-center mb-2">Organ Listings</h1>
+    <h6 class="d-flex justify-content-center mb-5">(Obviouly not a legitimate website, please do not sell your organs for money)</h1>
     <div class="d-flex justify-content-center flex-wrap">
     <% for (let i=0;i<product.length;i++){ %>
-        <a href=<%=product[i]._id%>>
+        <a href=<%=product[i]._id%> style="text-decoration: none; color:black">
         <div class="card p-3" style="width: 18rem;">
             <img src=<%=product[i].img%> style="height: 15rem; object-fit: contain" class="card-img-top hover-opacity" alt="product">
             <div class="card-body">
