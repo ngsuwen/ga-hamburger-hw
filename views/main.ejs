@@ -11,19 +11,22 @@
     </style>
 </head>
 <body>
-    <h1 class="d-flex justify-content-center flex-wrap mb-5">Shop</h1>
+    <div class="d-flex flex-column">
+    <h1 class="d-flex justify-content-center mb-5">Shop</h1>
     <div class="d-flex justify-content-center flex-wrap">
     <% for (let i=0;i<product.length;i++){ %>
         <a href=<%=product[i]._id%>>
-        <div class="card" style="width: 18rem;">
+        <div class="card p-3" style="width: 18rem;">
             <img src=<%=product[i].img%> class="card-img-top hover-opacity" alt="product">
             <div class="card-body">
                 <h5 class="card-title"><%=product[i].name%></h5>
-                <p class="card-text">Price: <%=product[i].price%></p>
+                <p class="card-text">Price: $<%=product[i].price%></p>
             </div>
         </div>
         </a>
     <% } %>
     </div>
+    <a class="d-flex justify-content-center mt-5" href='/new'><button type="button" class="btn btn-primary">Add New Product</button></a>
+    </div>  
 </body>
 </html>
