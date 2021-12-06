@@ -20,7 +20,8 @@ router.get('/edit/:id', async(req,res)=>{
 
 // VIEW ONE PRODUCT
 router.get('/:id', async(req,res)=>{
-    res.render('show.ejs', {data:req.params.id})
+    const product = await Product.findById(req.params.id)
+    res.render('show.ejs', {data:product})
 })
 
 module.exports = router
